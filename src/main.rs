@@ -75,6 +75,7 @@ impl Application for GUI {
                 self.total_duration += Instant::now() - self.last_update;
             }
             Message::Reset => {
+                self.tick_state = TickState::Stopped;
                 self.last_update = Instant::now();
                 self.total_duration = Duration::default();
             }
